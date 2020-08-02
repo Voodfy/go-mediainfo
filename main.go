@@ -2,11 +2,12 @@ package main
 
 import (
 	"flag"
-	"github.com/jkl1337/go-mediainfo"
 	"log"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/Voodfy/go-mediainfo/mediainfo"
 )
 
 func main() {
@@ -17,6 +18,7 @@ func main() {
 	}
 
 	mi := mediainfo.New()
+	log.Println("file", args[0])
 	if err := mi.Open(args[0]); err != nil {
 		log.Fatal(err)
 	}
